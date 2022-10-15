@@ -98,7 +98,7 @@ class AudioHandler:
             raise ValueError('Wrong type for audio')
 
         # Load graph and place_hoders
-        with tf.gfile.GFile(self.config['deepspeech_graph_fname'], "rb") as f:
+        with tf.gfile.io.GFile(self.config['deepspeech_graph_fname'], "rb") as f:
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(f.read())
 
